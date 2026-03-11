@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dabao'en - Historical Timeline</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="timeline-page">
+    <div class="site timeline-site">
+        <header class="top-bar">
+            <a href="index.html" class="brand" aria-label="Home">
+                <img src="https://sunyegabriel.github.io/MyPic/img/logo.png" alt="Dabaoen Temple logo"
+                    class="brand-logo" />
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a class="active" href="historical-timeline.html">Historical Timeline</a></li>
+                    <li><a href="more-guide.html">More Guide</a></li>
+                    <li><a href="visitor-experiences.html">Visitor Experiences</a></li>
+                    <li><a href="tickets-booking.html">Tickets Booking</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">EN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="timeline-main">
+            <section class="timeline-hero">
+                <p class="kicker">Visualising the</p>
+                <h2 class="page-title">Dabao'en Temple</h2>
+                <button class="btn ghost" type="button">Navigate</button>
+
+                <!-- 模型占位：先保留空白，后续放真实塔模型 -->
+                <div class="timeline-tower-placeholder">
+                    <p>塔模型区域（建模中）</p>
+                </div>
+            </section>
+
+            <section class="today-card">
+                <p class="today-title">TODAY</p>
+                <article class="timeline-card wide">
+                    <h3>Digital Revival</h3>
+                    <p>
+                        A modern, steel reconstruction of the pagoda now sits by the Yangtze River,
+                        rebuilding the historical memory with contemporary interpretation.
+                    </p>
+                </article>
+            </section>
+
+            <!-- 交互地图现在放在 Historical Timeline 页面 -->
+            <section class="box" id="map">
+                <h2>Map</h2>
+                <div class="map-box" id="interactiveMap" aria-label="Interactive Yangtze map"></div>
+                <p class="map-help" id="mapHelp">Click any city or landmark point to view details.</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="#">Sources</a>
+            <a href="more-guide.html#accessibility">Accessibility</a>
+            <a href="contact-us.html">Contact</a>
+            <a href="#">Social Media Links</a>
+        </footer>
+    </div>
+    <!-- map.js 改为在 Historical Timeline 页面加载 -->
+    <script src="map.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+:root {
+    --text: #1f2b35;
+    --blue-title: #253f57;
+    --line-soft: rgba(33, 53, 73, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Noto Sans", "Arial", "Helvetica", sans-serif;
+    background: #b7cad9;
+}
+
+a {
+    color: inherit;
+}
+
+/* 非 timeline 页面使用第三张图作为统一背景 */
+body.sub-page {
+    background: #b7cad9 url("https://sunyegabriel.github.io/MyPic/img/internetpage2.png") center top / cover no-repeat fixed;
+}
+
+/* timeline 页面使用第一张图作为主视觉背景 */
+body.timeline-page {
+    background: #c4d5e3;
+}
+
+.site {
+    width: min(1380px, 96vw);
+    margin: 0 auto;
+    min-height: 100vh;
+    background: transparent;
+}
+
+/* 顶部导航保持悬浮（滚动时仍可见） */
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 20px;
+    background: rgba(229, 238, 245, 0.88);
+    backdrop-filter: blur(6px);
+}
+
+
+.brand-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.brand {
+    margin: 0;
+    font-size: clamp(24px, 3.6vw, 46px);
+    line-height: 0.95;
+    color: #22384b;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-list a {
+    display: block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.nav-list a.active,
+.nav-list a:hover {
+    background: rgba(255, 255, 255, 0.72);
+    font-weight: 700;
+}
+
+/* -------- Home -------- */
+.home-main {
+    display: grid;
+    grid-template-columns: minmax(290px, 38%) minmax(300px, 1fr);
+    gap: 26px;
+    padding: 20px;
+}
+
+.tower-wrap {
+    position: relative;
+    min-height: 980px;
+}
+
+.tower-model-placeholder {
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: url("https://sunyegabriel.github.io/MyPic/img/internetpage2.png") center top / cover no-repeat;
+    display: grid;
+    place-items: center;
+    color: rgba(33, 53, 73, 0.62);
+    font-weight: 700;
+}
+
+.tower-line {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% - 160px);
+    background: rgba(28, 42, 54, 0.45);
+}
+
+.layer-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) skewY(-8deg);
+    border: 1px solid #677789;
+    background: linear-gradient(140deg, #dde3ea 0%, #bcc5cf 100%);
+    box-shadow: -10px 10px 0 rgba(95, 112, 130, 0.7);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.layer-btn span {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    transform: skewY(8deg);
+}
+
+.l1 {
+    top: 110px;
+    width: 80px;
+    height: 28px;
+}
+
+.l2 {
+    top: 215px;
+    width: 100px;
+    height: 35px;
+}
+
+.l3 {
+    top: 370px;
+    width: 135px;
+    height: 90px;
+}
+
+.l4 {
+    top: 600px;
+    width: 170px;
+    height: 105px;
+}
+
+.about-panel {
+    padding-top: 6px;
+}
+
+.kicker {
+    margin: 8px 0 0;
+    color: #5c7188;
+    font-size: clamp(18px, 2.5vw, 54px);
+    font-weight: 700;
+}
+
+.page-title {
+    margin: 0;
+    color: var(--blue-title);
+    font-size: clamp(38px, 5vw, 86px);
+    line-height: 0.95;
+}
+
+.lead {
+    margin: 12px 0 16px;
+    max-width: 700px;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.btn {
+    border: 1px solid rgba(38, 63, 87, 0.25);
+    border-radius: 999px;
+    background: rgba(248, 251, 255, 0.9);
+    padding: 10px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn.ghost {
+    background: rgba(245, 250, 255, 0.8);
+}
+
+.timeline-cards {
+    display: grid;
+    gap: 24px;
+    margin: 22px 0;
+}
+
+.timeline-card {
+    position: relative;
+    width: min(520px, 100%);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.78);
+    padding: 20px 16px 16px;
+}
+
+.timeline-card.wide {
+    width: 100%;
+}
+
+.timeline-card.right {
+    margin-left: auto;
+}
+
+.timeline-card h3 {
+    margin: 0 0 7px;
+    font-size: 34px;
+    line-height: 1;
+}
+
+.timeline-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.year-tag {
+    position: absolute;
+    top: -12px;
+    left: 14px;
+    border-radius: 999px;
+    background: rgba(228, 237, 246, 0.9);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 11px;
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quick-links a {
+    text-decoration: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 12px;
+    font-size: 14px;
+}
+
+.layer-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 60;
+}
+
+.layer-popup.show {
+    display: flex;
+}
+
+.popup-card {
+    width: min(420px, 94vw);
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.popup-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* -------- Generic inner pages -------- */
+.page-body {
+    padding: 24px 20px 30px;
+}
+
+.page-body h1 {
+    margin: 0 0 8px;
+    font-size: 42px;
+    color: var(--blue-title);
+}
+
+.page-body p.desc {
+    margin: 0 0 18px;
+    color: #3e4a56;
+    line-height: 1.5;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.box {
+    border-radius: 14px;
+    background: rgba(250, 252, 255, 0.72);
+    padding: 14px;
+}
+
+.box h2,
+.box h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.map-box {
+    min-height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(76, 117, 156, 0.25);
+    background: #dbe8f3;
+}
+
+.map-box canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.map-box-placeholder {
+    display: grid;
+    place-items: center;
+    color: #4d647c;
+    font-weight: 600;
+    background: rgba(227, 238, 246, 0.65);
+}
+
+.map-help {
+    margin: 10px 0 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgba(247, 251, 255, 0.82);
+    font-size: 14px;
+}
+
+.list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.activity {
+    border-radius: 14px;
+    background: rgba(246, 232, 203, 0.84);
+    padding: 12px;
+    min-height: 100px;
+}
+
+.price {
+    font-weight: 700;
+    margin: 6px 0;
+}
+
+.form {
+    display: grid;
+    gap: 10px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    border: 1px solid rgba(63, 83, 102, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.footer {
+    padding: 14px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 9px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* -------- Timeline page specific -------- */
+.timeline-main {
+    padding: 10px 0 26px;
+    background: url("https://sunyegabriel.github.io/MyPic/img/internetpage.png") center 100px / min(1000px, 100%) auto no-repeat;
+}
+
+.timeline-hero {
+    text-align: center;
+    min-height: 820px;
+    padding-top: 36px;
+}
+
+/* 去掉 placeholder 边框，只作为占位高度，显示背景塔图 */
+.timeline-tower-placeholder {
+    margin: 24px auto 0;
+    width: min(700px, 88%);
+    min-height: 560px;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    color: transparent;
+}
+
+.today-card {
+    width: min(1120px, 92%);
+    margin: -120px auto 12px;
+}
+
+.today-title {
+    margin: 0 0 8px;
+    font-size: 48px;
+    font-weight: 800;
+    color: #22384b;
+}
+
+.map-placeholder {
+    margin: 10px auto 0;
+    width: min(1120px, 92%);
+    min-height: 280px;
+    border-radius: 16px;
+    background: rgba(227, 238, 246, 0.65);
+    display: grid;
+    place-items: center;
+    color: #4d647c;
+}
+
+@media (max-width: 1100px) {
+    .home-main {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tower-wrap {
+        min-height: 760px;
+    }
+}
+
+@media (max-width: 780px) {
+    .site {
+        width: 98vw;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 14px;
+    }
+
+    .grid-2,
+    .quick-links,
+    .activity-grid,
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .page-body h1 {
+        font-size: 34px;
+    }
+
+    .timeline-tower-placeholder {
+        min-height: 360px;
+    }
+
+    .today-title {
+        font-size: 34px;
+    }
+
+    .timeline-main {
+        background-size: 140% auto;
+        background-position: center 130px;
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dabao'en - Home</title>
+    <!-- 页面共用样式文件：所有页面统一从这里读颜色、字体、布局规则 -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="sub-page">
+    <!-- site 是整页容器：方便设置最大宽度、边框和背景 -->
+    <div class="site">
+        <header class="top-bar">
+            <a href="index.html" class="brand" aria-label="Home">
+                <img src="https://sunyegabriel.github.io/MyPic/img/logo.png" alt="Dabaoen Temple logo"
+                    class="brand-logo" />
+            </a>
+            <nav aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <!-- active 表示“当前页面高亮” -->
+                    <li><a href="historical-timeline.html">Historical Timeline</a></li>
+                    <li><a href="more-guide.html">More Guide</a></li>
+                    <li><a href="visitor-experiences.html">Visitor Experiences</a></li>
+                    <li><a href="tickets-booking.html">Tickets Booking</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="#">EN</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="home-main">
+            <!--
+                左侧是“塔结构交互区”（目前先用抽象几何块模拟）。
+                后续你们做完真实 3D 模型后，可直接替换 tower-model-placeholder 区域。
+            -->
+            <div class="tower-wrap">
+                <div class="tower-model-placeholder" aria-label="Tower model placeholder">
+                    <p>塔模型预留区域（建模中）</p>
+                </div>
+
+                <div class="tower-line" aria-hidden="true"></div>
+
+                <!-- 每个 layer-btn 都自带 data-* 数据，JS 会读取这些数据并显示弹窗 -->
+                <button class="layer-btn l1" data-title="Digital Revival"
+                    data-text="Media installations and immersive interpretation of history."
+                    data-learn="more-guide.html#digital"
+                    data-visit="visitor-experiences.html#layer-digital"><span>Today</span></button>
+                <button class="layer-btn l2" data-title="Reconstruction Era"
+                    data-text="Modern restoration process and structural rebuilding."
+                    data-learn="more-guide.html#reconstruction"
+                    data-visit="visitor-experiences.html#layer-reconstruction"><span>2008</span></button>
+                <button class="layer-btn l3" data-title="Destruction Era"
+                    data-text="War damage and loss of key temple structures." data-learn="more-guide.html#destruction"
+                    data-visit="visitor-experiences.html#layer-destruction"><span>1856</span></button>
+                <button class="layer-btn l4" data-title="Construction Era"
+                    data-text="Architecture foundation and original pagoda construction."
+                    data-learn="more-guide.html#construction"
+                    data-visit="visitor-experiences.html#layer-construction"><span>1451</span></button>
+            </div>
+
+            <section class="about-panel">
+                <p class="kicker">Visualizing the</p>
+                <h2 class="page-title">Dabao'en Temple</h2>
+                <p class="lead">
+                    This homepage gives a quick overview of Dabao'en: timeline access, practical guide,
+                    visitor activities, booking entry, and contact support.
+                </p>
+
+                <a class="btn" href="historical-timeline.html">Start from Timeline</a>
+
+                <div class="timeline-cards">
+                    <article class="timeline-card" id="card-today">
+                        <span class="year-tag">Today</span>
+                        <h3>Digital Revival</h3>
+                        <p>Media installations and immersive interpretation of history.</p>
+                    </article>
+
+                    <article class="timeline-card right" id="card-2008">
+                        <span class="year-tag">2008</span>
+                        <h3>Reconstruction Era</h3>
+                        <p>Modern restoration process and structural rebuilding.</p>
+                    </article>
+
+                    <article class="timeline-card" id="card-1856">
+                        <span class="year-tag">1856</span>
+                        <h3>Destruction Era</h3>
+                        <p>War damage and loss of key temple structures.</p>
+                    </article>
+
+                    <article class="timeline-card right" id="card-1451">
+                        <span class="year-tag">1451</span>
+                        <h3>Construction Era</h3>
+                        <p>Architecture foundation and original pagoda construction.</p>
+                    </article>
+                </div>
+
+                <div class="quick-links">
+                    <a href="historical-timeline.html">Go to Historical Timeline</a>
+                    <a href="more-guide.html">Go to More Guide (map + accessibility)</a>
+                    <a href="visitor-experiences.html">Go to Visitor Experiences</a>
+                    <a href="tickets-booking.html">Go to Tickets Booking</a>
+                    <a href="contact-us.html">Go to Contact Us</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <a href="#">Sources</a>
+            <a href="more-guide.html#accessibility">Accessibility</a>
+            <a href="contact-us.html">Contact</a>
+            <a href="#">Social Media Links</a>
+        </footer>
+    </div>
+
+    <!-- 弹窗：点击左边 layer 按钮时出现 -->
+    <div class="layer-popup" id="layerPopup" aria-hidden="true">
+        <div class="popup-card">
+            <h3 id="popupTitle">Layer</h3>
+            <p id="popupText"></p>
+            <div class="popup-actions">
+                <a class="btn" id="popupLearn" href="more-guide.html">Learn More</a>
+                <a class="btn" id="popupVisit" href="visitor-experiences.html">See Activities</a>
+                <button class="btn" id="popupClose" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
