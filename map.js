@@ -316,9 +316,7 @@
         ctx.font = '700 30px Arial';
         ctx.fillText('Yangtze River Interactive Map', 26, 38);
 
-        ctx.fillStyle = 'rgb(95,115,135)';
-        ctx.font = '15px Arial';
-        ctx.fillText('Stylised JS version for the Dabao\'en Temple website', 26, 66);
+
     }
 
     function drawInstructions() {
