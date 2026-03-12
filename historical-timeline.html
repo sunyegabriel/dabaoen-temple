@@ -11,21 +11,53 @@
 <body class="timeline-page">
     <div class="site timeline-site">
         <header class="top-bar">
-            <a href="index.html" class="brand" aria-label="Home">
-                <img src="https://sunyegabriel.github.io/MyPic/img/logo.png" alt="Dabaoen Temple logo"
-                    class="brand-logo" />
-            </a>
-            <nav aria-label="Main Navigation">
-                <ul class="nav-list">
-                    <li><a class="active" href="historical-timeline.html">Historical Timeline</a></li>
-                    <li><a href="more-guide.html">More Guide</a></li>
-                    <li><a href="visitor-experiences.html">Visitor Experiences</a></li>
-                    <li><a href="tickets-booking.html">Tickets Booking</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">EN</a></li>
-                </ul>
-            </nav>
+            <div class="utility-row">
+                <div class="utility-links">
+                    <a href="#">Meetings &amp; Events</a>
+                    <a href="#">Safe Travel Information</a>
+                </div>
+                <div class="utility-right">
+                    <div class="social-links" aria-label="Social media links">
+                        <a href="#" aria-label="YouTube"><img src="https://sunyegabriel.github.io/MyPic/img/yt.svg"
+                                alt="YouTube" /></a>
+                        <a href="#" aria-label="Facebook"><img src="https://sunyegabriel.github.io/MyPic/img/fb.svg"
+                                alt="Facebook" /></a>
+                        <a href="#" aria-label="Instagram"><img src="https://sunyegabriel.github.io/MyPic/img/ins.svg"
+                                alt="Instagram" /></a>
+                    </div>
+                    <label class="language-picker">
+                        <span class="sr-only">Select language</span>
+                        <select aria-label="Select Language">
+                            <option>EN</option>
+                            <option>中文</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 主导航条：品牌 + 平铺导航 + 搜索 -->
+            <div class="main-nav-row">
+                <a href="index.html" class="brand" aria-label="Home">
+                    <img src="https://sunyegabriel.github.io/MyPic/img/logo.png" alt="Dabaoen Temple logo"
+                        class="brand-logo" />
+                </a>
+                <nav aria-label="Main Navigation">
+                    <ul class="nav-list">
+
+                        <li><a href="historical-timeline.html">Historical Timeline</a></li>
+                        <li><a href="more-guide.html">More Guide</a></li>
+                        <li><a href="visitor-experiences.html">Visitor Experiences</a></li>
+                        <li><a href="tickets-booking.html">Tickets Booking</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a class="active" href="index.html">Home</a></li>
+
+                    </ul>
+                </nav>
+                <form class="search-form" role="search" aria-label="Site search">
+                    <input type="search" placeholder="Search" aria-label="Search" />
+                    <button type="submit" aria-label="Submit search">🔍</button>
+                </form>
+            </div>
         </header>
 
         <main class="timeline-main">
@@ -34,7 +66,7 @@
                 <h2 class="page-title">Dabao'en Temple</h2>
                 <button class="btn ghost" type="button">Navigate</button>
 
-                <!-- 模型占位：先保留空白，后续放真实塔模型 -->
+                <!-- 模型占位：先保留空白，后续放真实塔的模型 -->
                 <div class="timeline-tower-placeholder">
                     <p>塔模型区域（建模中）</p>
                 </div>
@@ -51,7 +83,7 @@
                 </article>
             </section>
 
-            <!-- 交互地图现在放在 Historical Timeline 页面 -->
+            <!-- 交互地图现在放在Historical Timeline 页面 -->
             <section class="box" id="map">
                 <h2>Map</h2>
                 <div class="map-box" id="interactiveMap" aria-label="Interactive Yangtze map"></div>
@@ -66,7 +98,7 @@
             <a href="#">Social Media Links</a>
         </footer>
     </div>
-    <!-- map.js 改为在 Historical Timeline 页面加载 -->
+    <!-- map.js 改为在 Historical Timeline的页面加载 -->
     <script src="map.js"></script>
 </body>
 

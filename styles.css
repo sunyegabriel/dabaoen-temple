@@ -36,20 +36,89 @@ body.timeline-page {
     background: transparent;
 }
 
+
+
+
 /* 顶部导航保持悬浮（滚动时仍可见） */
+
 .top-bar {
     position: sticky;
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 20px;
+    flex-direction: column;
+    gap: 0;
     background: rgba(229, 238, 245, 0.88);
     backdrop-filter: blur(6px);
+    /* 关键：让导航条突破 .site 的宽度限制，直接铺满屏幕两端 */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
 }
 
+.utility-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.utility-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.utility-links a {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.utility-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-links a {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.social-links img {
+    width: 16px;
+    height: 16px;
+}
+
+.language-picker select {
+    border: 1px solid rgba(31, 43, 53, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    min-width: 140px;
+}
+
+.main-nav-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+}
 
 .brand-logo {
     height: 60px;
@@ -59,9 +128,10 @@ body.timeline-page {
 
 .brand {
     margin: 0;
-    font-size: clamp(24px, 3.6vw, 46px);
+    font-size: clamp(24px, 3vw, 36px);
     line-height: 0.95;
     color: #22384b;
+    text-decoration: none;
 }
 
 .nav-list {
@@ -69,25 +139,68 @@ body.timeline-page {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    gap: clamp(12px, 2vw, 32px);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .nav-list a {
     display: block;
     text-decoration: none;
     border-radius: 999px;
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: 8px 10px;
+    font-size: 18px;
     transition: all 0.2s ease;
 }
 
-.nav-list a.active,
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(31, 43, 53, 0.2);
+    border-radius: 10px;
+    padding: 4px 6px 4px 10px;
+}
+
+.search-form input {
+    border: 0;
+    outline: none;
+    background: transparent;
+    width: 190px;
+    font-size: 16px;
+}
+
+.search-form button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
 .nav-list a:hover {
     background: rgba(255, 255, 255, 0.72);
     font-weight: 700;
 }
+
+
+
+
+
 
 /* -------- Home -------- */
 .home-main {
